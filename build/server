@@ -1,0 +1,20 @@
+process.addListener('uncaughtException', function (err, stack) {
+    console.log('------------------------');
+    console.log('Exception: ' + err);
+    console.log(err.stack);
+    console.log('------------------------');
+});
+
+var fs = require("fs"),
+    express = require("express"),
+    site = express.createServer(),
+    Createserver = require('./lib/createserver'),
+
+    server = new Createserver({
+        port: 4000
+    });
+
+
+
+
+
