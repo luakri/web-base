@@ -1,11 +1,10 @@
 BASIC WEB BASE SERVER
 =====================
 
-Prerequisites
--------------
-Before getting started, you'll need Node.js with Node Package Manager.
-Get the bundle from http://nodejs.org/download/.
+Barebones of a express.js basic web server.
 
-Once those are installed, you'll need to set npm dependencies.
+Server files located at root/build
+Public files located at root/public
 
-npm install
+To run the web server, terminal window at root folder
+node build\server

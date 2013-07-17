@@ -7,7 +7,7 @@ process.addListener('uncaughtException', function (err, stack) {
 
 var fs = require("fs"),
     express = require("express"),
-    site = express.createServer(),
+    site = express,
     Createserver = require('./lib/createserver'),
 
     server = new Createserver({
