@@ -12,10 +12,8 @@ process.addListener('uncaughtException', function (err) {
 });
 
 
-var fs = require("fs"),
-    express = require("express"),
-    _ = require("lodash"),
-    site = express(),
+var ServerRoutes = require('./server-routes'),
+    _ = require('lodash'),
 
     Createserver = (function ()
     {
@@ -32,38 +30,14 @@ var fs = require("fs"),
         {
             defaults:
             {
-                port            : 4000,
-                publicFolder    : 'public',
-                startPage       : 'index.html'
+
             },
 
-            render : function ()
+            manageRoutes : function ()
             {
                 var self = this;
 
-                console.log('Request starting...');
-
-                site
-                .use(express.static(__dirname + '../../../' + self.settings.publicFolder));
-
-                site
-                .get("*", function (req, res)
-                {
-                    res
-                    .header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-
-                    fs
-                    .createReadStream('./' + self.settings.publicFolder + '/' + self.settings.startPage)
-                    .pipe(res);
-
-                    res
-                    .send('404', 404);
-                });
-
-                site
-                .listen(self.settings.port);
-
-                console.log("Server listening on http://localhost:" + self.settings.port);
+                self.serverRoutes = new ServerRoutes(self.settings);
 
                 return this;
             },
@@ -72,7 +46,7 @@ var fs = require("fs"),
             {
                 this.settings = _.assign({}, this.defaults, this.options);
 
-                this.render();
+                this.manageRoutes();
 
                 return this;
             }

@@ -8,11 +8,9 @@ process.addListener('uncaughtException', function (err, stack) {
 var fs = require("fs"),
     express = require("express"),
     site = express,
-    Createserver = require('./lib/createserver'),
+    CreateServer = require('./lib/createserver'),
 
-    server = new Createserver({
-        port: 4000
-    });
+    server = new CreateServer({});
 
 
 

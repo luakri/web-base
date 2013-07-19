@@ -1,0 +1,49 @@
+# GIT IGNORE FILES LIST
+
+# ----------------------- 
+# GENERAL PROJECT IGNORES 
+# ----------------------- 
+
+# Any build log files
+logs/
+
+
+# ------------
+# Node Modules - https://github.com/github/gitignore/blob/master/Node.gitignore 
+# ------------
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+
+
+
+# ----------------------------------------- 
+# ENVIRONMENT & IDE SPECIFIC SETTINGS FILES
+# ----------------------------------------- 
+
+# Sublime text
+*.sublime-project
+*.sublime-workspace
+
+# Visual Studio
+*.mswwsettings
+
+# Mac folder attributes
+.DS_Store
+
+# Windows folder attributes
+Desktop.ini
+Thumbs.db
+
